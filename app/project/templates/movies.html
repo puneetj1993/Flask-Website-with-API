@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %} API CALLING {% endblock %}
+
+{% block bodyContent %}
+<form method="POST" action="">
+    Enter the movie title here:  <input name="movie_name" type="text">
+</form>
+
+<article>
+    <li>Title:{{res['Title']}}</li>
+    <li>Released Year:{{res['Year']}}</li>
+    <li>Duration:{{res['Runtime']}}</li>
+    <li>Language:{{res['Language']}}</li>
+    <li>Genre:{{res['Genre']}}</li>
+    <li>IMDB Rating:{{res['imdbRating']}}</li>
+</article>
+
+{% endblock %}

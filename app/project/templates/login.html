@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %} {{title}} {% endblock %}
+{% block bodyContent %}
+<div class="main wrapper clearfix">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <table>
+            <tr>
+            <tr><td>{{ form.email.label }}</td><td> {{ form.email }}</td></tr>
+            <tr><td>{{ form.password.label }}</td><td> {{ form.password }}</td></tr>
+            <tr><td><button type="submit">{{ form.submit.label }}</button></td>
+        </table>
+    </form>
+    <h4><a href="{{url_for('register')}}">Don't have an account? Click here to Sign Up</a></h4>
+    <h4>Forgot Password? </h4>
+</div>
+{% endblock %}

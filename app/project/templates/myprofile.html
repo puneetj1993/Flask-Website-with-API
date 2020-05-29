@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %} Profile - {{username}} {% endblock %}
+
+{% block bodyContent %}
+<div class="main wrapper clearfix">
+    <h3>Complete your profile</h3>
+    
+        First Name: <input type="text" name='fname' value="{{vfname}}" >
+        Last Name: <input type="text" name='lname' value="{{vlname}}" >
+        <table>
+            <tr>
+                <tr><td><tr>Mobile:   <input type="number" name ='number' value="{{vphone}}"></td></tr></tr>
+                <td>About Me:<input type="text" name='profile' style="height: 80px;" size="60" value="{{vabout_me}}"></td>
+            </tr>
+            
+        </table>
+
+        <button type="submit">Submit</button>
+    </form>
+    <a href="{{url_for('update_profile')}}">Update Profile</a>
+</div>
+{% endblock %}
+{% block asideContent%}
+    <h3>Welcome {{current_user.username}}</h3>
+{% endblock %}

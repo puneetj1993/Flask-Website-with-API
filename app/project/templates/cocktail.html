@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %} Cocktail {% endblock %}
+
+{% block bodyContent %}
+<form method="POST" action="">
+    Enter the Cocktail Ingredient here:  <input name="cocktail_name" type="text">
+</form>
+
+<article>
+    <h4> Top 5 drinks are: </h4>
+    {% set cnt=namespace(value=1) %}
+    {% for drink in res["drinks"]  %}
+        {% if cnt.value <= 5 %}
+            <li>Drink Name:{{drink["strDrink"]}}</li>
+            <li><a href="{{drink["strDrinkThumb"]}}">Drink Image</a></li>
+            <li>Drink Id:{{drink['idDrink']}}></a></li>
+            {% set cnt.value = cnt.value + 1 %}
+            ------------------------------------------------
+        {% endif %}
+    {% endfor %}
+</article>
+
+{% endblock %}
+
+{% block asideContent %}
+<h3>Enter cocktail id to get the complete description</h3>
+<form method="POST" action="">
+    Cocktail Id :  <input name="cocktail_id" type="text">
+</form>
+{% endblock %}

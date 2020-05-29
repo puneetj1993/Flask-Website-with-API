@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block title %} Update Profile {% endblock %}
+
+{% block bodyContent %}
+<div class="main wrapper clearfix">
+    <h3>Change your current password</h3>
+    <form method='POST'>
+        Enter your new Password: <input type="text" name='password' >
+
+        <button type="submit">Submit</button>
+    </form>
+    
+</div>
+{% endblock %}
